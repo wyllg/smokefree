@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicotine Monitor - Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div id="auth-section">
+    <div class="card">
+        <div class="left-section">
+            <div class="brand-name">
+                Nicotine<br>
+                Monitoring<br>
+                System
+            </div>
+        </div>
+
+        <div class="right-section">
+            <h2 id="form-title">Login to your account</h2>
+            <p class="subtitle" id="form-subtitle">Welcome back! Please enter your details.</p>
+
+            <div class="toggle-container">
+                <button type="button" class="toggle-btn active" onclick="showAuthView('login')">Login</button>
+                <button type="button" class="toggle-btn" onclick="showAuthView('signup')">Sign Up</button>
+            </div>
+
+            <form id="auth-form">
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" placeholder="Enter username" required id="auth-username">
+                    <div class="input-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                </div>
+
+                <div class="input-group hidden" id="email-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter email address" id="auth-email">
+                    <div class="input-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required id="auth-password">
+                    <div class="input-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    </div>
+                </div>
+
+                <div class="actions" id="login-actions">
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="checkbox" style="width: auto; margin-right: 5px;"> Remember Me
+                    </label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="submit-btn" id="login-submit-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="../js/login.js"></script>
+
+</body>
+</html>

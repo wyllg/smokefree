@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicotine Monitor - Progress</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body id="page-container"> <aside class="sidebar">
+  <div class="logo-text">NICOTINE WITHDRAWAL<br>MONITORING SYSTEM</div>
+  <div class="welcome-text" id="welcome-user">Welcome, User</div>
+  <nav class="nav-menu">
+    <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-border-all"></i>Dashboard</a>
+    <a href="daily_log.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i>Daily Log</a>
+    <a href="insights.html" class="nav-item"><i class="fa-solid fa-lightbulb"></i>Insights</a>
+    <a href="progress.html" class="nav-item active"><i class="fa-solid fa-chart-line"></i>Progress</a>
+  </nav>
+  <a href="#" class="logout-btn" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i>LOG OUT</a>
+</aside>
+
+<button class="sidebar-toggle-btn" id="sidebar-toggle-btn" onclick="toggleSidebar()">
+    <i class="fa-solid fa-chevron-left"></i>
+</button>
+
+<main class="main-content">
+
+<header class="header-banner tech-banner-blue">
+    <div class="header-left">
+      <h1 style="margin:0; line-height:1.2;">
+        <i class="fa-solid fa-chart-line" style="font-size:1.5rem; color: #ffffff; margin-right: 12px; vertical-align: middle;"></i>
+        Recovery Progress
+      </h1>
+      <p style="margin-top:4px;">Visualizing your journey from daily logs.</p>
+    </div>
+    <div class="view-controls">
+      <button class="view-btn glass-btn active" id="btn-timeline" onclick="switchView('timeline')">
+        <i class="fa-solid fa-list-ul"></i> Timeline
+      </button>
+      <button class="view-btn glass-btn" id="btn-analytics" onclick="switchView('analytics')">
+        <i class="fa-solid fa-chart-pie"></i> Analytics
+      </button>
+    </div>
+  </header>
+
+  <div id="view-timeline" class="section-container">
+    <div class="section-header">
+      <div class="section-title"><h2>Daily Progress Timeline</h2></div>
+    </div>
+    <div class="timeline-container" id="timeline-list">
+      Loading...
+    </div>
+  </div>
+
+  <div id="view-analytics" class="analytics-view">
+    <div class="analytics-grid">
+
+      <div class="chart-card">
+        <div class="chart-header">
+          <div class="chart-icon-sm" style="background: #E6F9F0; color: #05CD99;"><i class="fa-solid fa-check-circle"></i></div>
+          <div class="chart-texts">
+            <h3>Daily Status Overview</h3>
+            <p>Smoke-free days vs Relapses</p>
+          </div>
+        </div>
+        <div style="height: 300px; width: 100%;"><canvas id="statusChart"></canvas></div>
+      </div>
+
+      <div class="chart-row">
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-icon-sm" style="background: #EBF3FF; color: #2563eb;"><i class="fa-solid fa-moon"></i></div>
+            <div class="chart-texts">
+              <h3>Sleep Quality Trend</h3>
+              <p>Monitoring rest improvements</p>
+            </div>
+          </div>
+          <div style="height: 250px; width: 100%;"><canvas id="sleepChart"></canvas></div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-header">
+            <div class="chart-icon-sm" style="background: #FFF5F5; color: #EE5D50;"><i class="fa-solid fa-heart-pulse"></i></div>
+            <div class="chart-texts">
+              <h3>Symptom Levels</h3>
+              <p>Anxiety, Cravings & Mood Quality</p>
+            </div>
+          </div>
+          <div style="height: 250px; width: 100%;"><canvas id="symptomsChart"></canvas></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<script src="../js/frontend_connector.js"></script>
+<script src="../js/progress.js"></script>
+
+</body>
+</html>

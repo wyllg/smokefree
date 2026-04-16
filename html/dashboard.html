@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nicotine Monitor - Dashboard</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="page-container"> <div id="dashboard-section">
+  <aside class="sidebar">
+    <div class="logo-text">NICOTINE WITHDRAWAL<br>MONITORING SYSTEM</div>
+    <div class="welcome-text" id="welcome-user">Welcome, User</div>
+    <nav class="nav-menu">
+      <a href="dashboard.html" class="nav-item active"><i class="fa-solid fa-border-all"></i>Dashboard</a>
+      <a href="daily_log.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i>Daily Log</a>
+      <a href="insights.html" class="nav-item"><i class="fa-solid fa-lightbulb"></i>Insights</a>
+      <a href="progress.html" class="nav-item"><i class="fa-solid fa-chart-line"></i>Progress</a>
+    </nav>
+    <a href="#" class="nav-item logout-btn" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i>LOG OUT</a>
+  </aside>
+
+  <button class="sidebar-toggle-btn" id="sidebar-toggle-btn" onclick="toggleSidebar()">
+      <i class="fa-solid fa-chevron-left"></i>
+  </button>
+
+  <main class="main-content">
+   <header class="tech-banner-blue">
+    <div class="header-left">
+        <h1 style="margin:0; line-height:1.2;">
+            <i class="fa-solid fa-border-all" style="font-size:1.5rem; color: #ffffff; margin-right: 12px; vertical-align: middle;"></i>
+            Dashboard
+        </h1>
+        <p style="margin-top:4px;">Monitor your nicotine cessation journey</p>
+    </div>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-label">Total Days</div><div class="stat-value-row"><div class="stat-number" id="stat-total">0</div><div class="stat-icon" style="color:var(--navy);"><i class="fa-solid fa-list-check"></i></div></div></div>
+      <div class="stat-card bg-green-light"><div class="stat-label text-green">Current Streak</div><div class="stat-value-row"><div class="stat-number text-green" id="stat-streak">0</div><div class="stat-icon text-green"><i class="fa-solid fa-fire"></i></div></div></div>
+      <div class="stat-card bg-blue-light"><div class="stat-label text-blue">Nicotine-Free</div><div class="stat-value-row"><div class="stat-number text-blue" id="stat-free">0</div><div class="stat-icon text-blue"><i class="fa-regular fa-face-smile"></i></div></div></div>
+      <div class="stat-card bg-red-light"><div class="stat-label text-red">Relapse Events</div><div class="stat-value-row"><div class="stat-number text-red" id="stat-relapse">0</div><div class="stat-icon text-red"><i class="fa-solid fa-triangle-exclamation"></i></div></div></div>
+    </div>
+
+    <div class="dashboard-layout">
+      <div class="left-column">
+        <div class="daily-card" id="daily-status-card">
+          <div class="check-circle-lg" id="daily-card-icon" style="display:none;"><i class="fa-solid fa-question" style="font-size: 30px;"></i></div>
+          <h3 class="daily-title" id="daily-card-title">Loading...</h3>
+          <p class="daily-sub" id="daily-checkin-date">...</p>
+          <div id="daily-card-actions" style="margin-top: 25px;"></div>
+        </div>
+
+        <div class="actions-activity-grid">
+          <div class="card-box">
+            <h3 class="section-title">Recent Activity</h3>
+            <div class="activity-list" id="activity-list"><div class="no-activity">Loading activity...</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="calendar-card">
+          <div class="calendar-header">
+            <h3 class="section-title" style="margin-bottom:0;">Calendar</h3>
+            <button class="btn-today" onclick="initCalendar()">Today</button>
+          </div>
+          <div class="month-selector">
+            <span class="nav-arrow" onclick="changeMonth(-1)">&#x25C0;</span>
+            <span id="current-month">Month Year</span>
+            <span class="nav-arrow" onclick="changeMonth(1)">&#x25B6;</span>
+          </div>
+          <div class="calendar-grid" id="calendar-grid"></div>
+          <div class="calendar-footer">
+            Click any date to add or edit a log.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="log-modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div><h3 class="modal-title">Log for <span id="modal-date-display"></span></h3></div>
+      <button type="button" class="close-modal" onclick="closeLogModal()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <form id="log-form">
+      <input type="hidden" id="log-date" required>
+      <div class="form-section">
+        <label class="form-label">Status</label>
+        <div class="status-buttons">
+          <button type="button" class="btn-status" id="status-free-btn" onclick="selectStatus('free')">Nicotine-Free</button>
+          <button type="button" class="btn-status" id="status-relapse-btn" onclick="selectStatus('relapse')">Relapse</button>
+        </div>
+        <input type="hidden" id="selected-status">
+      </div>
+      <div class="form-section">
+        <label class="form-label">Journal Entry</label>
+        <textarea id="log-notes" maxlength="200" placeholder="Notes..."></textarea>
+      </div>
+      <div class="modal-footer" style="justify-content: space-between;">
+        <button type="button" class="btn-cancel" id="btn-delete-entry" style="color: #EE5D50; border-color: #EE5D50;" onclick="deleteCurrentEntry()">Clear Entry</button>
+        <div style="display:flex; gap:10px;">
+            <button type="button" class="btn-cancel" onclick="closeLogModal()">Cancel</button>
+            <button type="submit" class="btn-save">Save Log</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../js/frontend_connector.js"></script>
+<script src="../js/dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+{
+    "trialalu": [
+        {
+            "date": "2025-11-28",
+            "status": "relapse",
+            "notes": "Quick Log from Dashboard",
+            "cravings": 0,
+            "anxiety": 0,
+            "username": "trialalu",
+            "id": "b409562e-8a18-40a8-b9ff-18a09ef44e39",
+            "timestamp": "2025-11-28T12:01:24.214270"
+        }
+    ],
+    "Rihun": [
+        {
+            "anxiety": 10,
+            "coping": [
+                "Cold Shower"
+            ],
+            "cravings": 10,
+            "date": "2025-11-26",
+            "id": "1afba85d-0373-425f-bc3d-a59d9163a0f9",
+            "mood": "Severe",
+            "notes": "Quick Log from Dashboard",
+            "physical": [
+                "Chest Tightness"
+            ],
+            "reflection": "Quick Log from Dashboard",
+            "sleep": "Very Poor",
+            "status": "relapse",
+            "timestamp": "2025-11-26T23:30:50.691122",
+            "triggers": [
+                "Boredom"
+            ],
+            "username": "Rihun"
+        },
+        {
+            "anxiety": 1,
+            "cravings": 1,
+            "date": "2025-11-25",
+            "id": "040dc9a1-a7f7-4058-b978-bbb577241637",
+            "notes": "",
+            "status": "free",
+            "timestamp": "2025-11-26T23:42:17.537561",
+            "username": "Rihun",
+            "mood": "Mild",
+            "sleep": "Good",
+            "triggers": [],
+            "coping": [
+                "Talk to Friend"
+            ],
+            "physical": [],
+            "reflection": ""
+        },
+        {
+            "anxiety": 1,
+            "cravings": 4,
+            "date": "2025-11-27",
+            "id": "e8941fd0-f4a9-4310-a07e-6476d03dbfa6",
+            "notes": "",
+            "status": "free",
+            "timestamp": "2025-11-27T20:24:30.969095",
+            "username": "Rihun",
+            "mood": "None",
+            "sleep": "Good",
+            "triggers": [
+                "Stress"
+            ],
+            "coping": [
+                "Exercise"
+            ],
+            "physical": [
+                "Sore Throat"
+            ],
+            "reflection": ""
+        },
+        {
+            "anxiety": 0,
+            "cravings": 0,
+            "date": "2025-11-24",
+            "id": "86695c9f-e6e4-4416-a6b9-a9e719caca50",
+            "notes": "",
+            "status": "relapse",
+            "timestamp": "2025-11-27T20:25:12.726716",
+            "username": "Rihun",
+            "mood": "None",
+            "sleep": null,
+            "triggers": [],
+            "coping": [
+                "Deep Breathing"
+            ],
+            "physical": [],
+            "reflection": ""
+        },
+        {
+            "anxiety": 5,
+            "cravings": 0,
+            "date": "2025-11-23",
+            "id": "57637383-206b-4196-8d1e-f50ee64895be",
+            "notes": "",
+            "status": "relapse",
+            "timestamp": "2025-11-27T20:25:31.973450",
+            "username": "Rihun",
+            "mood": "Mild",
+            "sleep": null,
+            "triggers": [],
+            "coping": [
+                "Reframing"
+            ],
+            "physical": [],
+            "reflection": ""
+        },
+        {
+            "anxiety": 2,
+            "cravings": 6,
+            "date": "2025-11-22",
+            "id": "ca3aa760-2fd1-40a3-9128-cb91a058b10e",
+            "notes": "",
+            "status": "free",
+            "timestamp": "2025-11-27T23:06:39.674975",
+            "username": "Rihun",
+            "mood": "None",
+            "sleep": "Poor",
+            "triggers": [
+                "Emotional"
+            ],
+            "coping": [
+                "Talk to Friend"
+            ],
+            "physical": [
+                "Increased Appetite"
+            ],
+            "reflection": ""
+        }
+    ],
+    "uj": [],
+    "trialala": [
+        {
+            "anxiety": 6,
+            "coping": [
+                "Deep Breathing"
+            ],
+            "cravings": 2,
+            "date": "2025-11-28",
+            "id": "5312e667-04b7-4524-a2a9-970951eb8ffb",
+            "mood": "None",
+            "physical": [
+                "Cough"
+            ],
+            "reflection": "",
+            "sleep": "Good",
+            "status": "free",
+            "timestamp": "2025-11-28T11:43:38.435664",
+            "triggers": [
+                "Social Event"
+            ],
+            "username": "trialala",
+            "notes": ""
+        }
+    ],
+    "marianatrench": [
+        {
+            "anxiety": 1,
+            "coping": [
+                "Drinking Water",
+                "Distraction",
+                "Talk to Friend",
+                "Listen to Music"
+            ],
+            "cravings": 4,
+            "date": "2025-11-27",
+            "id": "c32aba7f-b803-4a5c-b9ef-020e05482e48",
+            "mood": "Moderate",
+            "notes": "",
+            "physical": [
+                "Sore Throat",
+                "Chest Tightness",
+                "Increased Appetite",
+                "Restlessness"
+            ],
+            "reflection": "",
+            "sleep": "Good",
+            "status": "free",
+            "timestamp": "2025-11-28T12:00:54.653249",
+            "triggers": [
+                "After Meal"
+            ],
+            "username": "marianatrench"
+        },
+        {
+            "anxiety": 3,
+            "coping": [
+                "Distraction",
+                "Listen to Music"
+            ],
+            "cravings": 4,
+            "date": "2025-11-26",
+            "id": "ccdb2cd3-fc54-4d20-80ae-21d4a4d16022",
+            "mood": "Mild",
+            "notes": "",
+            "physical": [
+                "Nausea",
+                "Headache"
+            ],
+            "reflection": "",
+            "sleep": "Very Poor",
+            "status": "relapse",
+            "timestamp": "2025-11-28T12:01:03.165859",
+            "triggers": [],
+            "username": "marianatrench"
+        },
+        {
+            "anxiety": 2,
+            "coping": [
+                "Drinking Water",
+                "Cold Shower",
+                "Talk to Friend"
+            ],
+            "cravings": 4,
+            "date": "2025-11-25",
+            "id": "218cf192-6a02-4898-95a3-b7d72da48296",
+            "mood": "None",
+            "notes": "",
+            "physical": [
+                "Dizziness",
+                "Chest Tightness",
+                "Sweating",
+                "Increased Appetite",
+                "Restlessness"
+            ],
+            "reflection": "",
+            "sleep": "Good",
+            "status": "free",
+            "timestamp": "2025-11-28T12:01:08.489004",
+            "triggers": [],
+            "username": "marianatrench"
+        },
+        {
+            "anxiety": 0,
+            "coping": [
+                "Exercise",
+                "Talk to Friend",
+                "Reframing"
+            ],
+            "cravings": 0,
+            "date": "2025-11-24",
+            "id": "9412ccde-3033-4fdf-9def-bb7bfe98c276",
+            "mood": "Moderate",
+            "notes": "",
+            "physical": [
+                "Nausea",
+                "Sweating",
+                "Increased Appetite",
+                "Restlessness"
+            ],
+            "reflection": "",
+            "sleep": "Good",
+            "status": "relapse",
+            "timestamp": "2025-11-28T12:01:15.763209",
+            "triggers": [
+                "Emotional"
+            ],
+            "username": "marianatrench"
+        },
+        {
+            "anxiety": 1,
+            "coping": [
+                "Exercise",
+                "Talk to Friend"
+            ],
+            "cravings": 5,
+            "date": "2025-11-28",
+            "id": "45c8bf3b-a0b9-4407-808f-369143cb5cff",
+            "mood": "Moderate",
+            "notes": "",
+            "physical": [
+                "Cough",
+                "Dizziness",
+                "Nausea",
+                "Headache",
+                "Tingling"
+            ],
+            "reflection": "",
+            "sleep": "Poor",
+            "status": "free",
+            "timestamp": "2025-11-28T12:08:12.733976",
+            "triggers": [
+                "Social Event"
+            ],
+            "username": "marianatrench"
+        }
+    ],
+    "yani": [
+        {
+            "anxiety": 6,
+            "cravings": 6,
+            "date": "2025-11-23",
+            "id": "ba610168-3831-4d6d-b5b4-214650b207ed",
+            "notes": "",
+            "status": "free",
+            "timestamp": "2025-11-28T13:37:10.429331",
+            "username": "yani",
+            "mood": "Moderate",
+            "sleep": "Poor",
+            "triggers": [
+                "Emotional"
+            ],
+            "coping": [
+                "Talk to Friend",
+                "Meditation"
+            ],
+            "physical": [
+                "Increased Appetite",
+                "Fatigue"
+            ],
+            "reflection": ""
+        },
+        {
+            "anxiety": 6,
+            "cravings": 6,
+            "date": "2025-11-24",
+            "id": "c7e5edb1-3e05-47a6-aefc-4ecda58a5078",
+            "notes": "",
+            "status": "relapse",
+            "timestamp": "2025-11-28T13:37:24.380498",
+            "username": "yani",
+            "mood": "Mild",
+            "sleep": "Poor",
+            "triggers": [
+                "Boredom",
+                "Work Pressure"
+            ],
+            "coping": [
+                "Drinking Water",
+                "Distraction",
+                "Listen to Music"
+            ],
+            "physical": [
+                "Chest Tightness",
+                "Increased Appetite"
+            ],
+            "reflection": ""
+        },
+        {
+            "anxiety": 6,
+            "cravings": 6,
+            "date": "2025-11-25",
+            "id": "956b0c37-886d-4a0f-91b8-4019ab49022d",
+            "notes": "",
+            "status": "free",
+            "timestamp": "2025-11-28T13:37:36.344446",
+            "username": "yani",
+            "mood": "Mild",
+            "sleep": "Very Poor",
+            "triggers": [
+                "Work Pressure",
+                "Driving"
+            ],
+            "coping": [
+                "Talk to Friend",
+                "Reframing"
+            ],
+            "physical": [
+                "Cough",
+                "Sore Throat",
+                "Nausea",
+                "Chest Tightness"
+            ],
+            "reflection": ""
+        }
+    ]
+}

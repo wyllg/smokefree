@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicotine Monitor - Insights</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="page-container">
+<aside class="sidebar">
+    <div class="logo-text">NICOTINE WITHDRAWAL<br>MONITORING SYSTEM</div>
+    <div class="welcome-text" id="welcome-user">Welcome, User</div>
+    <nav class="nav-menu">
+        <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-border-all"></i>Dashboard</a>
+        <a href="daily_log.html" class="nav-item"><i class="fa-solid fa-calendar-check"></i>Daily Log</a>
+        <a href="insights.html" class="nav-item active"><i class="fa-solid fa-lightbulb"></i>Insights</a>
+        <a href="progress.html" class="nav-item"><i class="fa-solid fa-chart-line"></i>Progress</a>
+    </nav>
+    <a href="#" class="logout-btn" onclick="logout()"><i class="fa-solid fa-arrow-right-from-bracket"></i>LOG OUT</a>
+</aside>
+
+<button class="sidebar-toggle-btn" id="sidebar-toggle-btn" onclick="toggleSidebar()">
+    <i class="fa-solid fa-chevron-left"></i>
+</button>
+
+<main class="main-content">
+
+<header class="tech-banner-blue" style="display:flex; justify-content:space-between; align-items:center;">
+    <div class="header-left">
+
+        <h1 style="margin:0; line-height:1.2;">
+            <i class="fa-solid fa-lightbulb" style="font-size:1.5rem; color: #ffffff; margin-right: 12px; vertical-align: middle;"></i>
+            Insights & Guidelines
+        </h1>
+
+        <p style="margin-top:4px;">Personalized recommendations based on your recovery data.</p>
+
+    </div>
+
+    <div class="view-controls">
+        <button class="view-btn glass-btn active" id="btn-timeline" onclick="switchView('timeline')">
+            <i class="fa-solid fa-list-ul"></i> Insights
+        </button>
+        <button class="view-btn glass-btn" id="btn-analytics" onclick="switchView('analytics')">
+            <i class="fa-solid fa-chart-pie"></i> Guidelines
+        </button>
+    </div>
+</header>
+
+    <div id="panel-insights">
+        <div class="insight-container">
+            <div class="insight-section-header">
+                <div style="display:flex; align-items:center; gap:10px;">
+                    <i class="fa-regular fa-lightbulb" style="color:#475569;"></i>
+                    <span style="font-weight:600; color:#1e293b; font-size:14px;">YOUR PERSONALIZED INSIGHTS</span>
+                </div>
+                <div class="insight-badge-count" id="active-count">0 active</div>
+            </div>
+
+            <div id="insights-list" style="padding: 20px;">
+                Loading...
+            </div>
+
+                <!-- ANALYTICAL RANKING SECTION -->
+        <div style="margin-top: 40px; margin-bottom: 20px; display:flex; align-items:center; gap:10px;">
+             <i class="fa-solid fa-chart-simple" style="color:#1e293b;"></i>
+             <span style="font-weight:700; color:#1e293b; font-size:18px;">RECOVERY TOP 5 METRICS</span>
+        </div>
+
+        <div class="ranking-grid" id="ranking-container">
+            <!-- 1. Triggers Card -->
+            <div class="rank-card theme-trigger">
+                <div class="rank-header">
+                    <div class="rank-icon-box"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <div class="rank-title">Top 5 Triggers</div>
+                </div>
+                <div class="rank-list" id="list-triggers">
+                    <div class="empty-state-text">Calculating...</div>
+                </div>
+            </div>
+
+            <!-- 2. Coping Card -->
+            <div class="rank-card theme-coping">
+                <div class="rank-header">
+                    <div class="rank-icon-box"><i class="fa-solid fa-shield-heart"></i></div>
+                    <div class="rank-title">Top 5 Coping Methods</div>
+                </div>
+                <div class="rank-list" id="list-coping">
+                    <div class="empty-state-text">Calculating...</div>
+                </div>
+            </div>
+
+            <!-- 3. Symptoms Card -->
+            <div class="rank-card theme-symptom">
+                <div class="rank-header">
+                    <div class="rank-icon-box"><i class="fa-solid fa-notes-medical"></i></div>
+                    <div class="rank-title">Top 5 Symptoms</div>
+                </div>
+                <div class="rank-list" id="list-symptoms">
+                    <div class="empty-state-text">Calculating...</div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div id="panel-guidelines" class="hidden">
+        <div class="section-container" style="background:#F8F9FC; border:none; box-shadow:none; padding:0;">
+            <div class="guidelines-wrapper">
+                <div class="insight-section-header" style="background:white; border-radius:16px; margin-bottom:10px; border:1px solid #e2e8f0;">
+                    <div style="display:flex; align-items:center; gap:10px;">
+                    Compress-Archive -Path * -DestinationPath ../MyProject.zip
+    <i class="fa-solid fa-shield-halved" style="color:#1e293b;"></i>
+                        <span style="font-weight:600; color:#1e293b;">EVIDENCE-BASED GUIDELINES</span>
+                    </div>
+                </div>
+                <div class="guide-card guide-blue">
+                    <div class="gc-header"><i class="fa-solid fa-bolt gc-icon"></i><div class="gc-title">Physical Activity</div></div>
+                    <div class="gc-text">Regular exercise reduces craving intensity by up to 50%.</div>
+                </div>
+                <div class="guide-card guide-purple">
+                    <div class="gc-header"><i class="fa-solid fa-fingerprint gc-icon"></i><div class="gc-title">Trigger Identification</div></div>
+                    <div class="gc-text">Identify situational triggers to plan avoidance strategies.</div>
+                </div>
+                <div class="guide-card guide-green">
+                    <div class="gc-header"><i class="fa-solid fa-chart-line gc-icon"></i><div class="gc-title">Progress Monitoring</div></div>
+                    <div class="gc-text">Physical recovery initiates within 24 hours of cessation.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<script src="../js/frontend_connector.js"></script>
+<script src="../js/insights.js"></script>
+
+</body>
+</html>

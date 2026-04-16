@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicotine Monitor - Daily Log</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="page-container"> <div id="dashboard-section">
+    <aside class="sidebar">
+        <div class="logo-text">NICOTINE WITHDRAWAL<br>MONITORING SYSTEM</div>
+        <div class="welcome-text" id="welcome-user">Welcome, User</div>
+
+        <nav class="nav-menu">
+            <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-border-all"></i>Dashboard</a>
+            <a href="daily_log.html" class="nav-item active"><i class="fa-solid fa-calendar-check"></i>Daily Log</a>
+            <a href="insights.html" class="nav-item"><i class="fa-solid fa-lightbulb"></i>Insights</a>
+            <a href="progress.html" class="nav-item"><i class="fa-solid fa-chart-line"></i>Progress</a>
+        </nav>
+
+        <a href="#" class="nav-item logout-btn" onclick="logout()">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> LOG OUT
+        </a>
+    </aside>
+
+    <button class="sidebar-toggle-btn" id="sidebar-toggle-btn" onclick="toggleSidebar()">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <main class="main-content">
+        <div class="daily-log-page">
+            <header class="header-banner">
+                <div class="header-title">
+                    <h1><i class="fa-regular fa-calendar" style="font-size:1.5rem; vertical-align:middle; margin-right: 8px;"></i> Daily Symptom Log</h1>
+                    <p class="header-date" id="daily-log-date-display" style="font-size:0.9rem; color:var(--ivory); margin-top: 5px;">Loading date...</p>
+                </div>
+                <div class="entry-badge hidden" id="daily-log-entry-badge">
+                    <i class="fa-solid fa-circle-check"></i> Entry Recorded
+                </div>
+            </header>
+
+            <form id="symptom-log-form">
+                <div class="grid-container">
+                    <div class="card stat-card neutral" id="stat-card-cravings">
+                        <div class="stat-header"><div class="icon-box"><i class="fa-solid fa-brain"></i></div><div class="badge-count" id="crave-summary">0</div></div>
+                        <div class="stat-title">Cravings</div><div class="stat-desc">Intensity</div>
+                    </div>
+                    <div class="card stat-card neutral" id="stat-card-anxiety">
+                        <div class="stat-header"><div class="icon-box"><i class="fa-solid fa-circle-exclamation"></i></div><div class="badge-count" id="anxiety-summary">0</div></div>
+                        <div class="stat-title">Anxiety</div><div class="stat-desc">Level</div>
+                    </div>
+                    <div class="card stat-card neutral" id="stat-card-triggers">
+                        <div class="stat-header"><div class="icon-box"><i class="fa-solid fa-bolt"></i></div><div class="badge-count" id="trigger-count">0</div></div>
+                        <div class="stat-title">Triggers</div><div class="stat-desc">Selected</div>
+                    </div>
+                    <div class="card stat-card neutral" id="stat-card-coping">
+                        <div class="stat-header"><div class="icon-box"><i class="fa-regular fa-heart"></i></div><div class="badge-count" id="coping-count">0</div></div>
+                        <div class="stat-title">Coping</div><div class="stat-desc">Strategies</div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="row-2-col">
+                    <div class="card">
+                        <div class="slider-header">
+                            <div class="icon-box" style="color: #9333ea;"><i class="fa-solid fa-brain"></i></div>
+                            <div><h3>Cravings Intensity</h3></div>
+                        </div>
+                        <div class="slider-value-container">
+                            <span style="font-size: 0.9rem; color: #94a3b8; font-weight: 500;">Current Level</span>
+                            <div class="slider-badge" id="symptom-cravings-badge">0</div>
+                        </div>
+                        <input type="range" id="symptom-cravings-slider" min="0" max="10" value="0">
+                        <div class="range-labels"><span>None (Good)</span><span>Overwhelming (Bad)</span></div>
+                    </div>
+
+                    <div class="card">
+                        <div class="slider-header">
+                            <div class="icon-box" style="color: #ca8a04;"><i class="fa-solid fa-circle-exclamation"></i></div>
+                            <div><h3>Anxiety Level</h3></div>
+                        </div>
+                        <div class="slider-value-container">
+                            <span style="font-size: 0.9rem; color: #94a3b8; font-weight: 500;">Current Level</span>
+                            <div class="slider-badge" id="symptom-anxiety-badge">0</div>
+                        </div>
+                        <input type="range" id="symptom-anxiety-slider" min="0" max="10" value="0">
+                        <div class="range-labels"><span>Calm (Good)</span><span>Severe (Bad)</span></div>
+                    </div>
+                </div>
+
+                <div class="row-2-col">
+                    <div class="card">
+                        <div class="slider-header">
+                            <div class="icon-box" style="color: #f43f5e;"><i class="fa-solid fa-arrow-trend-up"></i></div> <!--mood irritability icon-->
+                            <div><h3>Mood / Irritability</h3></div>
+                        </div>
+                        <div class="option-list" id="mood-list">
+                            <div class="option-item opt-good" data-value="None" onclick="selectOption('mood', this)"><div class="option-content"><div class="option-dot"></div> None (Good)</div><i class="fa-solid fa-check check-icon"></i></div>
+                            <div class="option-item opt-good" data-value="Mild" onclick="selectOption('mood', this)"><div class="option-content"><div class="option-dot"></div> Mild</div><i class="fa-solid fa-check check-icon"></i></div>
+                            <div class="option-item opt-mid" data-value="Moderate" onclick="selectOption('mood', this)"><div class="option-content"><div class="option-dot"></div> Moderate</div><i class="fa-solid fa-check check-icon"></i></div>
+                            <div class="option-item opt-bad" data-value="Severe" onclick="selectOption('mood', this)"><div class="option-content"><div class="option-dot"></div> Severe (Bad)</div><i class="fa-solid fa-check check-icon"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="slider-header">
+                            <div class="icon-box" style="color: #7c3aed;"><i class="fa-solid fa-moon"></i></div>
+                            <div><h3>Sleep Quality</h3></div>
+                        </div>
+                        <div class="option-list" id="sleep-list">
+                            <div class="option-item opt-good" data-value="Very Good" onclick="selectOption('sleep', this)"><div class="option-content"><div class="option-dot"></div> Very Good</div><i class="fa-solid fa-check check-icon"></i></div>
+                            <div class="option-item opt-good" data-value="Good" onclick="selectOption('sleep', this)"><div class="option-content"><div class="option-dot"></div> Good</div><i class="fa-solid fa-check check-icon"></i></div>
+                            <div class="option-item opt-mid" data-value="Poor" onclick="selectOption('sleep', this)"><div class="option-content"><div class="option-dot"></div> Poor</div><i class="fa-solid fa-check check-icon"></i></div>
+                            <div class="option-item opt-bad" data-value="Very Poor" onclick="selectOption('sleep', this)"><div class="option-content"><div class="option-dot"></div> Very Poor</div><i class="fa-solid fa-check check-icon"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div class="row-2-col">
+                    <div class="card">
+                        <div class="slider-header">
+                            <div class="icon-box" style="color: #e11d48;"><i class="fa-solid fa-bolt"></i></div>
+                            <div><h3>Triggers</h3><p style="font-size: 0.85rem; color: #94a3b8;">Select all that apply</p></div>
+                        </div>
+                        <div class="chip-grid-2col" id="trigger-grid">
+                            <label class="checkbox-label trigger-item" data-value="Stress" onclick="toggleCheck(event, this)"><input type="checkbox"> Stress</label>
+                            <label class="checkbox-label trigger-item" data-value="Social Event" onclick="toggleCheck(event, this)"><input type="checkbox"> Social Event</label>
+                            <label class="checkbox-label trigger-item" data-value="Coffee/Alcohol" onclick="toggleCheck(event, this)"><input type="checkbox"> Coffee/Alcohol</label>
+                            <label class="checkbox-label trigger-item" data-value="Boredom" onclick="toggleCheck(event, this)"><input type="checkbox"> Boredom</label>
+                            <label class="checkbox-label trigger-item" data-value="After Meal" onclick="toggleCheck(event, this)"><input type="checkbox"> After Meal</label>
+                            <label class="checkbox-label trigger-item" data-value="Work Pressure" onclick="toggleCheck(event, this)"><input type="checkbox"> Work Pressure</label>
+                            <label class="checkbox-label trigger-item" data-value="Seeing Smoke" onclick="toggleCheck(event, this)"><input type="checkbox"> Seeing Smoke</label>
+                            <label class="checkbox-label trigger-item" data-value="Emotional" onclick="toggleCheck(event, this)"><input type="checkbox"> Emotional</label>
+                            <label class="checkbox-label trigger-item" data-value="Environmental" onclick="toggleCheck(event, this)"><input type="checkbox"> Environmental</label>
+                            <label class="checkbox-label trigger-item" data-value="Driving" onclick="toggleCheck(event, this)"><input type="checkbox"> Driving</label>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="slider-header">
+                            <div class="icon-box" style="color: #16a34a;"><i class="fa-regular fa-heart"></i></div>
+                            <div><h3>Coping Strategies</h3><p style="font-size: 0.85rem; color: #94a3b8;">Select all that apply</p></div>
+                        </div>
+                        <div class="chip-grid-2col" id="coping-grid">
+                            <label class="checkbox-label coping-item" data-value="Deep Breathing" onclick="toggleCheck(event, this)"><input type="checkbox"> Deep Breathing</label>
+                            <label class="checkbox-label coping-item" data-value="Chewing Gum" onclick="toggleCheck(event, this)"><input type="checkbox"> Chewing Gum</label>
+                            <label class="checkbox-label coping-item" data-value="Drinking Water" onclick="toggleCheck(event, this)"><input type="checkbox"> Drinking Water</label>
+                            <label class="checkbox-label coping-item" data-value="Cold Shower" onclick="toggleCheck(event, this)"><input type="checkbox"> Cold Shower</label>
+                            <label class="checkbox-label coping-item" data-value="Exercise" onclick="toggleCheck(event, this)"><input type="checkbox"> Exercise</label>
+                            <label class="checkbox-label coping-item" data-value="Distraction" onclick="toggleCheck(event, this)"><input type="checkbox"> Distraction</label>
+                            <label class="checkbox-label coping-item" data-value="Talk to Friend" onclick="toggleCheck(event, this)"><input type="checkbox"> Talk to Friend</label>
+                            <label class="checkbox-label coping-item" data-value="Meditation" onclick="toggleCheck(event, this)"><input type="checkbox"> Meditation</label>
+                            <label class="checkbox-label coping-item" data-value="Reframing" onclick="toggleCheck(event, this)"><input type="checkbox"> Reframing</label>
+                            <label class="checkbox-label coping-item" data-value="Listen to Music" onclick="toggleCheck(event, this)"><input type="checkbox"> Listen to Music</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-bottom: 30px;">
+                    <div class="slider-header">
+                        <div class="icon-box" style="color: #059669;"><i class="fa-solid fa-stethoscope"></i></div>
+                        <div><h3>Physical Symptoms</h3><p style="font-size: 0.85rem; color: #94a3b8;">Select all that apply</p></div>
+                    </div>
+                    <div class="chip-grid-3col" id="physical-symptoms-grid">
+                        <label class="checkbox-label physical-item" data-value="Cough" onclick="toggleCheck(event, this)"><input type="checkbox"> Cough</label>
+                        <label class="checkbox-label physical-item" data-value="Sore Throat" onclick="toggleCheck(event, this)"><input type="checkbox"> Sore Throat</label>
+                        <label class="checkbox-label physical-item" data-value="Dizziness" onclick="toggleCheck(event, this)"><input type="checkbox"> Dizziness</label>
+                        <label class="checkbox-label physical-item" data-value="Nausea" onclick="toggleCheck(event, this)"><input type="checkbox"> Nausea</label>
+                        <label class="checkbox-label physical-item" data-value="Chest Tightness" onclick="toggleCheck(event, this)"><input type="checkbox"> Chest Tightness</label>
+                        <label class="checkbox-label physical-item" data-value="Sweating" onclick="toggleCheck(event, this)"><input type="checkbox"> Sweating</label>
+                        <label class="checkbox-label physical-item" data-value="Shakiness" onclick="toggleCheck(event, this)"><input type="checkbox"> Shakiness</label>
+                        <label class="checkbox-label physical-item" data-value="Increased Appetite" onclick="toggleCheck(event, this)"><input type="checkbox"> Increased Appetite</label>
+                        <label class="checkbox-label physical-item" data-value="Restlessness" onclick="toggleCheck(event, this)"><input type="checkbox"> Restlessness</label>
+                        <label class="checkbox-label physical-item" data-value="Headache" onclick="toggleCheck(event, this)"><input type="checkbox"> Headache</label>
+                        <label class="checkbox-label physical-item" data-value="Fatigue" onclick="toggleCheck(event, this)"><input type="checkbox"> Fatigue</label>
+                        <label class="checkbox-label physical-item" data-value="Tingling" onclick="toggleCheck(event, this)"><input type="checkbox"> Tingling</label>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="slider-header">
+                        <div class="icon-box" style="color: #9333ea;"><i class="fa-regular fa-file-lines"></i></div>
+                        <div><h3>Daily Reflection</h3></div>
+                    </div>
+                    <textarea class="reflection-box" id="symptom-reflection-box" placeholder="Write your thoughts here..."></textarea>
+                </div>
+
+                <footer class="form-actions">
+                    <div style="display: flex; gap: 12px;">
+                        <button type="button" class="btn btn-outline" onclick="clearSymptomForm()">Clear</button>
+                        <button type="button" class="btn btn-outline" onclick="window.location.href='dashboard.html'">Cancel</button>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-check"></i> Submit Log</button>
+                </footer>
+            </form>
+        </div>
+    </main>
+</div>
+
+<script src="../js/frontend_connector.js"></script>
+<script src="../js/daily_log.js"></script>
+
+</body>
+</html>

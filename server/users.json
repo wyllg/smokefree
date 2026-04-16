@@ -1,0 +1,34 @@
+{
+    "maj": {
+        "password_hash": "scrypt:32768:8:1$q6thIa7BVvjewanU$a89eb4ee480579616cbce2b64aa868b182dc1758edee0a14e4534c9e396770964a4298970e27f538ae8ddd6db0d3d9821ad4a5817d59c720619be72de97ff2d9",
+        "email": "maj@gmail.com"
+    },
+    "yani": {
+        "password_hash": "scrypt:32768:8:1$KztkidHc7ccx7CZZ$af58bf60ed660b975d1625d86ef9b924aa9ade952a389a18d48769b44cfadc57432e1b5f472f954ac42dabf7dda25b1e3810cee730753c0333866a379eaf06e0",
+        "email": "yani@gmail.com"
+    },
+    "ash": {
+        "password_hash": "scrypt:32768:8:1$m8IVcx0T0lTsbhXF$b4d8e734f5b2fbe1487a1823bf6b7cc1e41bad9db4fe32d57b6d2d0a0b89fdfddc598a48282c64c2be9cf55ac546929282d69a035af95c1960965db4d7e97afd",
+        "email": "jhanelredondo@gmail.com"
+    },
+    "marianatrench": {
+        "password_hash": "scrypt:32768:8:1$KZ7TucWhDAX0jjFA$f4dc3d025f9d9d17212818c61a61b5bfbef2609c9b30bcf614886d297bcf2b85dd7f7ae19cc5448b7db05763f0e726a64264ee7b3f4bf5bd97533c8c1fc05379",
+        "email": "marianmindoro95@gmail.com"
+    },
+    "trialala": {
+        "password_hash": "scrypt:32768:8:1$gA15L56IEsJulOFu$fd113a92b1c0ed19f94a6ab36c711b1e088f274a0b490c500328705050aeb8b13c8b16dd8730023bfc3910b9b6f9f3dab5b3b0536e6d5d8ed4d84998cb3a21bb",
+        "email": "marianmindoro95@gmail.com"
+    },
+    "trialalu": {
+        "password_hash": "scrypt:32768:8:1$aX5VYHM8whL8zheP$bedecc92d8206fc9aafdf615e7681b65449dea4e8f5035081a2ada0c24c09df7e71d7fc5ca275428a8b1878476bccc3ec9404682770a035ff2c35edc13b0416d",
+        "email": "marianmindoro95@gmail.com"
+    },
+    "Rihun": {
+        "password_hash": "scrypt:32768:8:1$NKTnsdd7sHkuLSmu$adf846b10e42b96ae5f8e8ed0f221b5bc2653a92e4fafcff08eb63c2956a7c6bd32db3c031a28bd7b27cf6485a9174fb0a157ada44fd6c4b7d33c8175ffdcd99",
+        "email": "hatfog@gmail.com"
+    },
+    "wyellgaray": {
+        "password_hash": "scrypt:32768:8:1$RncMFfy05LxjtToH$1226ed95c83384712868709e7243b0930392712f40b83104e2d0c819b71611ab71000d62728547f3aa2f1ea59f7eb9ce25fb95628b5513566eade3561b5580ca",
+        "email": "garaywyell@gmail.com"
+    }
+}
