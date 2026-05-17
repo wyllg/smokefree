@@ -30,5 +30,9 @@
     "wyellgaray": {
         "password_hash": "scrypt:32768:8:1$RncMFfy05LxjtToH$1226ed95c83384712868709e7243b0930392712f40b83104e2d0c819b71611ab71000d62728547f3aa2f1ea59f7eb9ce25fb95628b5513566eade3561b5580ca",
         "email": "garaywyell@gmail.com"
+    },
+    "wyell": {
+        "password_hash": "scrypt:32768:8:1$5NKHmUmgPsvAMexY$15b85048387530b24d94a3e45cf8fac20542d0944341b3a2b169123e615798c8c81cae962a7c0aeaf23d52055ebae153095d833322286191004916208dd11dd4",
+        "email": "wyellgaray11@gmail.com"
     }
 }

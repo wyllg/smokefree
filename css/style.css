@@ -642,3 +642,146 @@ input[type=range]::-webkit-slider-thumb { height: 28px; width: 28px; border-radi
 .theme-coping .progress-fill { background: #05CD99; }
 .theme-symptom .progress-fill { background: #3b82f6; }
 
+/* =========================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================= */
+
+@media (max-width: 1024px) {
+    /* Tablet Adjustments */
+    .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .daily-log-page .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .right-column {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- Auth Section --- */
+    #auth-section .card {
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    .left-section, .right-section {
+        width: 100%;
+        padding: 30px 20px;
+    }
+    .left-section {
+        border-right: none;
+        border-bottom: 1px solid var(--deepnavy);
+    }
+    .submit-btn {
+        bottom: 20px;
+        right: 20px;
+    }
+
+    /* --- Sidebar & Main Content (Mobile Overlap) --- */
+    .sidebar {
+        transform: translateX(-100%); /* Hidden by default on mobile */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    }
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 60px 15px 20px 15px; /* Added top padding so toggle btn doesn't hide content */
+    }
+    
+    /* Reverse Sidebar Toggle Logic for Mobile */
+    .sidebar-toggle-btn {
+        left: 15px;
+        top: 15px;
+        transform: rotate(180deg);
+    }
+    /* When sidebar is OPEN on mobile (assuming JS toggles a class on body/#page-container) */
+    #page-container:not(.sidebar-collapsed) .sidebar {
+        transform: translateX(0);
+    }
+    #page-container:not(.sidebar-collapsed) .sidebar-toggle-btn {
+        left: 275px;
+        transform: rotate(0deg);
+    }
+
+    /* --- Daily Log Layout --- */
+    .daily-log-page .row-2-col {
+        grid-template-columns: 1fr;
+    }
+    .daily-log-page .chip-grid-3col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .daily-log-page .header-banner, .tech-banner-blue {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 20px;
+    }
+    .daily-log-page .form-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .daily-log-page .form-actions > div {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .daily-log-page .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* --- Calendars & Modals --- */
+    .calendar-card {
+        padding: 15px;
+    }
+    .day-num {
+        height: 40px; /* Better touch target */
+    }
+    .modal-content {
+        width: 90%;
+        padding: 20px;
+    }
+    .status-buttons {
+        flex-direction: column;
+    }
+    .modal-footer {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    .modal-footer > div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .btn-cancel, .btn-save, #btn-delete-entry {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    /* --- Small Mobile Phones --- */
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .daily-log-page .grid-container,
+    .daily-log-page .chip-grid-3col,
+    .daily-log-page .chip-grid-2col {
+        grid-template-columns: 1fr;
+    }
+    .ranking-grid {
+        grid-template-columns: 1fr;
+    }
+    .tech-banner-blue h1 {
+        font-size: 1.25rem;
+    }
+}
+
